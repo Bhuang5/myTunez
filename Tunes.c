@@ -12,7 +12,15 @@ typedef struct song_node{
 
 song_node *table[26];
 
-int print_list(struct node *start){  
+int print_songs(struct node *start){  
+  song_node *k;
+  int i = 0;
+  while (i < 26){
+    print_list(table[i]);
+  }
+}
+
+int print_list(song_node *start){
   //Base case 1 for empty linked list
   if(start == 0 ){
     printf("{}\n");
@@ -29,17 +37,20 @@ int print_list(struct node *start){
   printf("%d, ", start->i);
   return print_list(start->next);
 }
+*/
 
-struct node* insert_front(struct node *front, int x){
-  //The "constructor" for the new front k
-  struct node *k = (struct node *)calloc(1, sizeof(struct node *));
-  
+song_node* insert_song(song_node *front, char n[256], char a[]){
+  song_node *k = (song_node *)calloc(1, sizeof(song_node *));
+  int i = 0;
+  while (i < 26){
+    if (n[0] == table[i]) 
+      k->next = front;
+      }
   //Insert
-  k->next = front;
-  k->i = x;
   return k;
 }
 
+/*
 struct node* free_list(struct node *front){
   //Place holder
   struct node *p;  
@@ -51,3 +62,4 @@ struct node* free_list(struct node *front){
   return front;
 
 }
+*/

@@ -3,7 +3,6 @@ Tunez: Tunez.c
 
 clean: 
 	rm *~
-	rm ~#
 
 run: Tunez
 	./Tunez
