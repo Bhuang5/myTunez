@@ -19,6 +19,3 @@ clean:
 
 run: tunez
 	./tunez
-
-debug: tunez
-	gdb tunez
